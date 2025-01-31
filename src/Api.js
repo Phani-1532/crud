@@ -1,9 +1,8 @@
-import axios from 'axios'
+import axios from "axios";
 
-const url = 'http://localhost:4200/products'
+const url = 'http://localhost:3000/products'
 
-async function Api() {
-    
+async function Api(){
    return await axios.get(url)
 }
 
