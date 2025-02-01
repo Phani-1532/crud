@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Table({data}) {
+function Table({data, deleteProducts}) {
+
   return (
     <table className='table m-3'>
       <thead>
@@ -19,7 +20,7 @@ function Table({data}) {
           <td>{data.category}</td>
           <td>
             <button className='btn btn-primary m-1'>Edit</button>
-            <button className='btn btn-danger m-1'>Delete</button>
+            <button className='btn btn-danger m-1' onClick={() => {deleteProducts(data.id)}}>Delete</button>
           </td>
         </tr>)}
       </tbody>

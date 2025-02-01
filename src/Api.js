@@ -2,8 +2,12 @@ import axios from "axios";
 
 const url = 'http://localhost:3000/products'
 
-async function Api(){
+export async function getData(){
    return await axios.get(url)
 }
 
-export default Api
+export async function deleteData(id){
+   return await axios.delete(`${url}/${id}`)
+}
+
+
