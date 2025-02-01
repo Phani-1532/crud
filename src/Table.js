@@ -20,7 +20,7 @@ function Table({data, deleteProducts}) {
           <td>{data.category}</td>
           <td>
             <button className='btn btn-primary m-1'>Edit</button>
-            <button className='btn btn-danger m-1' onClick={() => {deleteProducts(data.id)}}>Delete</button>
+            <button className='btn btn-danger m-1' onClick={() => {deleteProducts(data.id)}}> Delete</button>
           </td>
         </tr>)}
       </tbody>

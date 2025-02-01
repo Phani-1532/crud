@@ -1,11 +1,19 @@
 import './App.css';
-import {getData, deleteData} from './Api';
+import {getData, postData, updateData, deleteData} from './Api';
 import Table from './Table';
 import Form from './Form';
 import { useEffect, useState } from 'react';
 
 function App() {
   const [data, setData] = useState([])
+  const [form, setForm] = useState(false)
+
+  //for form visibility
+
+  const interChange = () => {
+    setForm(!form)
+  }
+
   useEffect(() => {
     getProducts()
   },[])
@@ -15,18 +23,23 @@ function App() {
     setData(res.data)
   }
 
+  const postProducts = async () => {
+    let res = await postData()
+    getProducts()
+  }
+
   const deleteProducts = async (id) => {
     await deleteData(id)
     getProducts()
   }
 
- 
   return (
    <>
     <div className='wrapper'>
       <h2 className='text-primary'>CRUD Operations</h2>
-      <button className='btn btn-primary'>Add Product</button>
+      <button className='btn btn-primary' onClick={() => interChange()}>Add Product</button>
       <Table data = {data} deleteProducts = {deleteProducts} />
+      {form && <Form interChange = {interChange} />}
     </div>
    </>
   );
