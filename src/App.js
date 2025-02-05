@@ -66,8 +66,8 @@ function App() {
   return (
    <>
     <div className='wrapper'>
-      <h2 className='text-primary'>CRUD Operations</h2>
-      <button className='btn btn-primary' onClick={() => interChange()}>Add Product</button>
+      <h2 className='text-primary text-center'>CRUD Operations</h2>
+      <button className='btn btn-primary float-end' onClick={() => interChange()}>Add Product</button>
       <Table data = {data} deleteProducts = {deleteProducts} updateProducts = {updateProducts} />
       {form && <Form interChange = {interChange} initializeFormData = {initializeFormData} postProducts={postProducts} />}
     </div>
